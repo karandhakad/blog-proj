@@ -14,7 +14,7 @@ function Slides() {
   // for Loading
     setTimeout(() => {
       setIsLoading(false);
-    }, 0);
+    }, 3000);
 
   // for Hide Card
   const hideCard = (id) => {
