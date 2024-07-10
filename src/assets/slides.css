@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.container .box {
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.container .box .loading {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 30px 0;
+  width: 100%;
+  height: 100%;
+}
+.container .box .slide-card {
+  width: 100%;
+  max-height: 100px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 10px lightgray;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 15px 25px;
+  text-align: left;
+  overflow: hidden;
+}
+.container .box .slide-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.container .box .slide-card .crossIconBox {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.container .box .slide-card .crossIconBox .crossIcon {
+  text-align: right;
+  width: 30px;
+  color: red;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  cursor: pointer;
+}
+.container .box .slide-card .title {
+  width: 90%;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.container .box .slide-card .body {
+  width: 90%;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.container .box .slide-card .time {
+  font-size: 14px;
+  font-weight: 700;
+  color: lightgray;
+  margin: 10px 0;
+}

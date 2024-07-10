@@ -1,0 +1,63 @@
+.form
+{
+    width: 100%;
+    padding: 70px 30px 50px 30px;
+    text-align: left !important;
+    overflow: hidden;
+}
+.form .headline
+{
+    font-size: 25px;
+    margin: 0;
+}
+.form .para
+{
+    font-size: 17px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.form .inputs
+{
+    padding: 10px 0;
+    width: 100%;
+}
+.form .inputs label
+{
+    font-weight: 400;
+}
+.form .inputs input,.form .inputs textarea
+{
+    width: 400px;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    background: white;
+    border-radius: 7px;
+    margin-top: 7px;
+    color: black !important;
+    font-size: 15px;
+}
+.form .inputs input,.form .inputs::placeholder
+{
+    color: lightgrey;
+    font-size: 16px;
+}
+.form textarea
+{
+    height: 80px;
+    resize: none;
+}
+.form button
+{
+    padding: 10px;
+    width: 230px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #5CC8A1;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
