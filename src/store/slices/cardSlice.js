@@ -13,12 +13,6 @@ const dataSlice = createSlice({
     name:'data',
     initialState,
     reducers: {
-        pageChange: (state, action) => {
-            const {value} = action.payload;
-            state.cardsList = state.cardsList.filter((card) => {
-                return card.id > value * 6;
-              });
-        },
         crossCard: (state, action) => {
             const { id } = action.payload;
             state.cardsList = state.cardsList.filter((card) => {
@@ -28,6 +22,6 @@ const dataSlice = createSlice({
     }
 })
 
-export const {setData,pageChange,crossCard} = dataSlice.actions;
+export const {crossCard} = dataSlice.actions;
 
 export default dataSlice.reducer;

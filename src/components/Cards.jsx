@@ -3,12 +3,14 @@ import "../assets/cards.css"
 import Pagination from "@mui/material/Pagination";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useDispatch, useSelector } from "react-redux";
-import { crossCard, pageChange } from '../store/slices/cardSlice';
+import { crossCard } from '../store/slices/cardSlice';
 
 
 function Cards() {
 
   const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   const cardsList = useSelector((state) => state.data.cardsList);
   const dispatch = useDispatch();
@@ -24,9 +26,13 @@ function Cards() {
   };
 
   //for Page Change
-  const handlePageChange = (event,value) => {
-        dispatch(pageChange({value}));
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value);
   };
+
+  const paginatedData = cardsList.slice((currentPage - 1) * itemsPerPage,currentPage * itemsPerPage);
+
+
   return (
     <>
     <div className="container">
@@ -37,7 +43,7 @@ function Cards() {
               <p style={{ marginLeft: "15px" }}>Loading...</p>{" "}
             </div>
           ) : (
-            cardsList.slice(0, 6).map((value, index) => {
+            paginatedData.map((value, index) => {
               return (
                 <div className="card" key={value.id}>
                   <div
@@ -61,7 +67,12 @@ function Cards() {
       </div>
       {isLoading ? null : (
         <div className="navigation">
-          <Pagination count={10} color="primary" onChange={handlePageChange} />
+          <Pagination
+            count={Math.ceil(cardsList.length / itemsPerPage)}
+            color="primary"
+            page={currentPage}
+            onChange={handlePageChange}
+          />
         </div>
       )}
     </>
